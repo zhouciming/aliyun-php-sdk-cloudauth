@@ -3,7 +3,7 @@
 ## Install
 
 ```
-compose require dongkaipo/aliyun-php-sdk-cloudauth
+composer require dongkaipo/aliyun-php-sdk-cloudauth
 ```
 
 ## Usage

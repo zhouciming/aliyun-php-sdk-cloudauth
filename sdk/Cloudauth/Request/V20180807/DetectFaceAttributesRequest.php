@@ -17,15 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20180916;
+namespace Cloudauth\Request\V20180807;
 use Aliyun\Core\RpcAcsRequest;
-
-
 class DetectFaceAttributesRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2018-09-16", "DetectFaceAttributes", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-08-07", "DetectFaceAttributes", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
@@ -52,7 +50,8 @@ class DetectFaceAttributesRequest extends RpcAcsRequest
 
 	public function setMaxNumPhotosPerCategory($maxNumPhotosPerCategory) {
 		$this->maxNumPhotosPerCategory = $maxNumPhotosPerCategory;
-		}
+		$this->queryParameters["MaxNumPhotosPerCategory"]=$maxNumPhotosPerCategory;
+	}
 
 	public function getMaxFaceNum() {
 		return $this->maxFaceNum;
@@ -60,7 +59,8 @@ class DetectFaceAttributesRequest extends RpcAcsRequest
 
 	public function setMaxFaceNum($maxFaceNum) {
 		$this->maxFaceNum = $maxFaceNum;
-		}
+		$this->queryParameters["MaxFaceNum"]=$maxFaceNum;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -86,7 +86,8 @@ class DetectFaceAttributesRequest extends RpcAcsRequest
 
 	public function setRetAttributes($retAttributes) {
 		$this->retAttributes = $retAttributes;
-		}
+		$this->queryParameters["RetAttributes"]=$retAttributes;
+	}
 
 	public function getMaterialValue() {
 		return $this->materialValue;
@@ -94,7 +95,8 @@ class DetectFaceAttributesRequest extends RpcAcsRequest
 
 	public function setMaterialValue($materialValue) {
 		$this->materialValue = $materialValue;
-		}
+		$this->queryParameters["MaterialValue"]=$materialValue;
+	}
 
 	public function getDontSaveDB() {
 		return $this->dontSaveDB;
@@ -102,7 +104,8 @@ class DetectFaceAttributesRequest extends RpcAcsRequest
 
 	public function setDontSaveDB($dontSaveDB) {
 		$this->dontSaveDB = $dontSaveDB;
-		}
+		$this->queryParameters["DontSaveDB"]=$dontSaveDB;
+	}
 
 	public function getClientTag() {
 		return $this->clientTag;
@@ -110,6 +113,7 @@ class DetectFaceAttributesRequest extends RpcAcsRequest
 
 	public function setClientTag($clientTag) {
 		$this->clientTag = $clientTag;
-		}
+		$this->queryParameters["ClientTag"]=$clientTag;
+	}
 	
 }

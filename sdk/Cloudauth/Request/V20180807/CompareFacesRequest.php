@@ -17,24 +17,37 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20180916;
+namespace Cloudauth\Request\V20180807;
 use Aliyun\Core\RpcAcsRequest;
-class SubmitMaterialsRequest extends RpcAcsRequest
+class CompareFacesRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2018-09-16", "SubmitMaterials", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-08-07", "CompareFaces", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
+
+	private  $sourceImageType;
 
 	private  $resourceOwnerId;
 
 	private  $sourceIp;
 
-	private  $Materials;
+	private  $targetImageType;
 
-	private  $verifyToken;
+	private  $sourceImageValue;
+
+	private  $targetImageValue;
+
+	public function getSourceImageType() {
+		return $this->sourceImageType;
+	}
+
+	public function setSourceImageType($sourceImageType) {
+		$this->sourceImageType = $sourceImageType;
+		$this->queryParameters["SourceImageType"]=$sourceImageType;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -54,21 +67,31 @@ class SubmitMaterialsRequest extends RpcAcsRequest
 		$this->queryParameters["SourceIp"]=$sourceIp;
 	}
 
-	public function getMaterials() {
-		return $this->Materials;
+	public function getTargetImageType() {
+		return $this->targetImageType;
 	}
 
-	public function setMaterials($Materials) {
-		$this->Materials = $Materials;
-
+	public function setTargetImageType($targetImageType) {
+		$this->targetImageType = $targetImageType;
+		$this->queryParameters["TargetImageType"]=$targetImageType;
 	}
 
-	public function getVerifyToken() {
-		return $this->verifyToken;
+	public function getSourceImageValue() {
+		return $this->sourceImageValue;
 	}
 
-	public function setVerifyToken($verifyToken) {
-		$this->verifyToken = $verifyToken;
-		}
+	public function setSourceImageValue($sourceImageValue) {
+		$this->sourceImageValue = $sourceImageValue;
+		$this->queryParameters["SourceImageValue"]=$sourceImageValue;
+	}
+
+	public function getTargetImageValue() {
+		return $this->targetImageValue;
+	}
+
+	public function setTargetImageValue($targetImageValue) {
+		$this->targetImageValue = $targetImageValue;
+		$this->queryParameters["TargetImageValue"]=$targetImageValue;
+	}
 	
 }

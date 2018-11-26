@@ -17,13 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20180916;
+namespace Cloudauth\Request\V20180807;
 use Aliyun\Core\RpcAcsRequest;
 class SubmitMaterialsRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2018-09-16", "SubmitMaterials", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-08-07", "SubmitMaterials", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
@@ -60,7 +60,11 @@ class SubmitMaterialsRequest extends RpcAcsRequest
 
 	public function setMaterials($Materials) {
 		$this->Materials = $Materials;
+		for ($i = 0; $i < count($Materials); $i ++) {	
+			$this->queryParameters['Material.' . ($i + 1) . '.MaterialType'] = $Materials[$i]['MaterialType'];
+			$this->queryParameters['Material.' . ($i + 1) . '.Value'] = $Materials[$i]['Value'];
 
+		}
 	}
 
 	public function getVerifyToken() {
@@ -69,6 +73,7 @@ class SubmitMaterialsRequest extends RpcAcsRequest
 
 	public function setVerifyToken($verifyToken) {
 		$this->verifyToken = $verifyToken;
-		}
+		$this->queryParameters["VerifyToken"]=$verifyToken;
+	}
 	
 }

@@ -17,24 +17,39 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20180916;
+namespace Cloudauth\Request\V20180807;
 use Aliyun\Core\RpcAcsRequest;
-class SubmitMaterialsRequest extends RpcAcsRequest
+class GetVerifyTokenRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2018-09-16", "SubmitMaterials", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-08-07", "GetVerifyToken", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
+	private  $userData;
+
 	private  $resourceOwnerId;
+
+	private  $biz;
 
 	private  $sourceIp;
 
-	private  $Materials;
+	private  $binding;
 
-	private  $verifyToken;
+	private  $verifyConfigs;
+
+	private  $ticketId;
+
+	public function getUserData() {
+		return $this->userData;
+	}
+
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -43,6 +58,15 @@ class SubmitMaterialsRequest extends RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getBiz() {
+		return $this->biz;
+	}
+
+	public function setBiz($biz) {
+		$this->biz = $biz;
+		$this->queryParameters["Biz"]=$biz;
 	}
 
 	public function getSourceIp() {
@@ -54,21 +78,31 @@ class SubmitMaterialsRequest extends RpcAcsRequest
 		$this->queryParameters["SourceIp"]=$sourceIp;
 	}
 
-	public function getMaterials() {
-		return $this->Materials;
+	public function getBinding() {
+		return $this->binding;
 	}
 
-	public function setMaterials($Materials) {
-		$this->Materials = $Materials;
-
+	public function setBinding($binding) {
+		$this->binding = $binding;
+		$this->queryParameters["Binding"]=$binding;
 	}
 
-	public function getVerifyToken() {
-		return $this->verifyToken;
+	public function getVerifyConfigs() {
+		return $this->verifyConfigs;
 	}
 
-	public function setVerifyToken($verifyToken) {
-		$this->verifyToken = $verifyToken;
-		}
+	public function setVerifyConfigs($verifyConfigs) {
+		$this->verifyConfigs = $verifyConfigs;
+		$this->queryParameters["VerifyConfigs"]=$verifyConfigs;
+	}
+
+	public function getTicketId() {
+		return $this->ticketId;
+	}
+
+	public function setTicketId($ticketId) {
+		$this->ticketId = $ticketId;
+		$this->queryParameters["TicketId"]=$ticketId;
+	}
 	
 }

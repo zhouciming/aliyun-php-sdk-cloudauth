@@ -16,7 +16,9 @@
     "dongkaipo/aliyun-php-sdk-core": "dev-master"
   },
   "require-dev": {
-    "phpunit/phpunit": "^7.4@dev"
+    "phpunit/phpunit": "^7.4@dev",
+    "ext-openssl": "*",
+    "dongkaipo/aliyun-php-sdk-core": "dev-master"
   },
   "autoload": {
     "psr-4": {

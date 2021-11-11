@@ -13,12 +13,12 @@
   "require": {
     "php": ">=7.0",
     "ext-openssl": "*",
-    "dongkaipo/aliyun-php-sdk-core": "dev-master"
+    "dongkaipo/aliyun-php-sdk-core": "master"
   },
   "require-dev": {
     "phpunit/phpunit": "^7.4@dev",
     "ext-openssl": "*",
-    "dongkaipo/aliyun-php-sdk-core": "dev-master"
+    "dongkaipo/aliyun-php-sdk-core": "master"
   },
   "autoload": {
     "psr-4": {
